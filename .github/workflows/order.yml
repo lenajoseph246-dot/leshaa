@@ -1,0 +1,16 @@
+name: Run on Order Changes
+
+on:
+  push:
+    paths:
+      - 'orders/**'   # only triggers when anything inside orders/ changes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: echo "Order files changed!"
